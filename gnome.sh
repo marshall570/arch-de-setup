@@ -6,7 +6,7 @@ clear
 
 sudo pacman -Syu gnome gnome-tweaks gnome-themes-extra gnome-browser-connector file-roller xdg-desktop-portal-gnome python-nautilus celluloid --noconfirm
 yay -Syu adw-gtk-theme menulibre --noconfirm
-sudo pacman -Rsn simple-scan gnome-tour gnome-connections gnome-contacts gnome-photos totem gnome-clocks gnome-maps gnome-music epiphany baobab gnome-console gnome-user-docs yelp gnome-weather gnome-software gnome-characters cheese --noconfirm
+sudo pacman -Rsn simple-scan gnome-tour gnome-connections gnome-contacts gnome-photos totem gnome-clocks gnome-maps gnome-music epiphany baobab gnome-user-docs yelp gnome-weather gnome-logs gnome-software gnome-characters cheese --noconfirm
 gsettings set org.gnome.nautilus.preferences default-sort-order 'type'
 curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 
