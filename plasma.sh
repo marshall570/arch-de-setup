@@ -5,7 +5,7 @@ echo "Instalando Plasma" && sleep 3
 clear
 
 sudo pacman -Syu plasma sddm sddm-kcm plasma-wayland-session plasma-wayland-protocols dolphin ark kcalc kate kdeconnect gwenview haruna okular spectacle konsole packagekit-qt5 qt5-imageformats kimageformats ffmpegthumbs ffmpegthumbnailer --noconfirm
-sudo pacman -Rsn oxygen plasma-sdk --noconfirm
+sudo pacman -Rsn oxygen plasma-sdk plasma-workspace-wallpapers plasma-welcome --noconfirm
 
 clear
 
