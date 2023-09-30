@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 echo "Instalando Gnome" && sleep 3
 
@@ -9,6 +9,7 @@ yay -Syu adw-gtk-theme menulibre --noconfirm
 sudo pacman -Rsn simple-scan gnome-tour gnome-connections gnome-contacts gnome-photos totem gnome-clocks gnome-maps gnome-music epiphany baobab gnome-user-docs yelp gnome-weather gnome-logs gnome-software gnome-characters cheese --noconfirm
 gsettings set org.gnome.nautilus.preferences default-sort-order 'type'
 curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
+mkdir ~/.config/Kvantum && git clone https://github.com/GabePoel/KvLibadwaita.git && cd KvLibadwaita/src/ && cp -r KvLibadwaita ~/.config/Kvantum && cd ~ && kvantummanager --set KvLibadwaitaDark && rm -rf KvLibadwaita
 
 clear 
 
@@ -24,7 +25,7 @@ echo "Removendo Plasma" && sleep 3
 
 clear
 
-sudo pacman -Rsn plasma sddm sddm-kcm plasma-wayland-session plasma-wayland-protocols dolphin ark kcalc kate kdeconnect gwenview haruna okular spectacle konsole kwalletmanager partitionmanager packagekit-qt5 qt5-imageformats kimageformats ffmpegthumbnailer ffmpegthumbs --noconfirm
+sudo pacman -Rsn plasma sddm sddm-kcm plasma-wayland-session plasma-wayland-protocols dolphin ark kcalc kate kdeconnect gwenview haruna okular spectacle konsole kwalletmanager partitionmanager packagekit-qt5 qt5-imageformats ffmpegthumbnailer ffmpegthumbs --noconfirm
 
 clear
 

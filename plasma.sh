@@ -1,10 +1,10 @@
-#!/bin/zsh
+#!/bin/sh
 
 echo "Instalando Plasma" && sleep 3
 
 clear
 
-sudo pacman -Syu plasma sddm sddm-kcm plasma-wayland-session plasma-wayland-protocols dolphin ark kcalc kate kdeconnect gwenview haruna okular spectacle konsole packagekit-qt5 qt5-imageformats kimageformats kwalletmanager partitionmanager ffmpegthumbs ffmpegthumbnailer --noconfirm
+sudo pacman -Syu plasma sddm sddm-kcm plasma-wayland-session plasma-wayland-protocols dolphin ark kcalc kate kdeconnect gwenview haruna okular spectacle konsole packagekit-qt5 qt5-imageformats kwalletmanager partitionmanager ffmpegthumbs ffmpegthumbnailer --noconfirm
 sudo pacman -Rsn oxygen plasma-sdk plasma-welcome --noconfirm
 mkdir /home/marshall/.config/fontconfig/ && wget https://raw.githubusercontent.com/GaKu999/dotfiles/main/.config/fontconfig/fonts.conf -O ~/.config/fontconfig/fonts.conf
 
