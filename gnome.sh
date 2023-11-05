@@ -34,7 +34,7 @@ echo "Removendo Plasma" && sleep 3
 
 clear
 
-sudo pacman -Rsn plasma sddm sddm-kcm plasma-wayland-session plasma-wayland-protocols dolphin ark kcalc kate kdeconnect gwenview okular spectacle konsole ktorrent kwalletmanager partitionmanager packagekit-qt5 qt5-imageformats ffmpegthumbnailer ffmpegthumbs --noconfirm
+sudo pacman -Rsn plasma sddm sddm-kcm plasma-wayland-session plasma-wayland-protocols dolphin ark kcalc kate kdeconnect gwenview okular spectacle konsole kwalletmanager partitionmanager packagekit-qt5 qt5-imageformats ffmpegthumbnailer ffmpegthumbs --noconfirm
 
 clear
 
