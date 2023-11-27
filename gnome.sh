@@ -4,7 +4,7 @@ echo "Instalando Gnome" && sleep 3
 
 clear
 
-sudo pacman -Syu gnome gnome-tweaks gnome-themes-extra gnome-browser-connector file-roller xdg-desktop-portal-gnome python-nautilus celluloid --noconfirm
+sudo pacman -Syu gnome gnome-tweaks gnome-themes-extra gnome-browser-connector file-roller xdg-desktop-portal-gnome python-nautilus --noconfirm
 yay -Syu adw-gtk-theme menulibre --noconfirm
 sudo pacman -Rsn simple-scan gnome-tour gnome-connections gnome-contacts totem gnome-clocks gnome-maps gnome-music epiphany baobab gnome-user-docs yelp gnome-weather gnome-logs gnome-software gnome-characters snapshot --noconfirm
 curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
@@ -14,7 +14,6 @@ echo "- Ordenação de arquivos" ; gsettings set org.gnome.nautilus.preferences 
 echo "- Tema da interface" ; gsettings set org.gnome.desktop.interface gtk-theme Adw-dark
 echo "- Tema de ícones" ; gsettings set org.gnome.desktop.interface icon-theme Adwaita
 echo "- Tema do cursor" ; gsettings set org.gnome.desktop.interface cursor-theme Adwaita
-echo "- Fonte da interface" ; gsettings set org.gnome.desktop.interface font-name 'Cantarell Regular'
 echo "- Botões de janela" ; gsettings set org.gnome.desktop.wm.preferences button-layout ':close'
 echo "- Centralização de janelas" ; gsettings set org.gnome.mutter center-new-windows 'true'
 echo "- Touchpad em TtoC" ; gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click 'true'
