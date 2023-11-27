@@ -22,7 +22,7 @@ echo "Removendo Gnome" && sleep 3
 
 clear
 
-sudo pacman -Rcsn gnome gnome-tweaks gnome-themes-extra gnome-browser-connector file-roller xdg-desktop-portal-gnome python-nautilus celluloid adw-gtk-theme menulibre --noconfirm
+sudo pacman -Rcsn gnome gnome-tweaks gnome-themes-extra gnome-browser-connector file-roller xdg-desktop-portal-gnome python-nautilus adw-gtk-theme menulibre --noconfirm
 
 clear
 
