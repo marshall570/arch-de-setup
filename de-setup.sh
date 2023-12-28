@@ -93,7 +93,6 @@ GNOME_PACKAGES=(
     gnome-system-monitor
     gnome-text-editor
     gnome-user-share
-    gnome-weather
     grilo-plugins
     gvfs
     gvfs-afc
