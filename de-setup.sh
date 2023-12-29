@@ -231,7 +231,6 @@ GNOME_CONFIGS=(
     ~/.local/share/applications/jupyter-notebook.desktop
     ~/.local/share/applications/kvantummanager.desktop
     ~/.local/share/applications/org.gnome.Characters.desktop
-    ~/.local/share/applications/org.gnome.Weather.desktop
     ~/.local/share/backgrounds
     ~/.local/share/baloo
     ~/.local/share/desktop-directories
