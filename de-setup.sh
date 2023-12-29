@@ -291,7 +291,7 @@ if [ $DESKTOP = "1" ]; then
 
             echo "Removendo dotfiles" && sleep 3
             for files in "${PLASMA_CONFIGS[@]}"; do
-                rm -f "$files"
+                rm -rf "$files"
             done
             clear
         fi
@@ -334,7 +334,7 @@ elif [ $DESKTOP = "2" ]; then
 
             echo "Removendo dotfiles" && sleep 3
             for files in "${GNOME_CONFIGS[@]}"; do
-                rm -f "$files"
+                rm -rf "$files"
             done
             clear
         fi
