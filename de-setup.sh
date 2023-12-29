@@ -329,6 +329,7 @@ elif [ $DESKTOP = "2" ]; then
         if [ ${CLEAN^^} = "S" ]; then           
             clear
             echo "Removendo Gnome" && sleep 3 && clear
+            yay -Rsn adw-gtk-theme menulibre --noconfirm
             sudo pacman -Rsn "${GNOME_PACKAGES[@]}" --noconfirm && clear
 
             echo "Removendo dotfiles" && sleep 3
