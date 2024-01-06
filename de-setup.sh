@@ -72,6 +72,72 @@ PLASMA_PACKAGES=(
     ffmpegthumbnailer
 )
 
+PLASMA_CONFIGS=(
+    ~/.cache/
+    ~/.config/akonadi
+    ~/.config/fontconfig/
+    ~/.config/gtk-3.0
+    ~/.config/gtk-4.0
+    ~/.config/kate
+    ~/.config/KDE
+    ~/.config/kde.org
+    ~/.config/kdeconnect
+    ~/.config/kdedefaults
+    ~/.config/libaccounts-glib
+    ~/.config/menus
+    ~/.config/plasma-workspace
+    ~/.config/pulse
+    ~/.config/session
+    ~/.config/signond
+    ~/.config/xsettingsd
+    ~/.config/transmission
+    ~/.config/*rc
+    ~/.config/kwritemetainfos
+    ~/.config/emaildefaults
+    ~/.config/emailidentities
+    ~/.config/gtkrc-2.0
+    ~/.config/katemetainfos
+    ~/.config/kdeglobals
+    ~/.config/konsolesshconfig
+    ~/.config/PlasmaDiscoverUpdates
+    ~/.config/mimeapps.list
+    ~/.config/QtProject.conf
+    ~/.config/Trolltech.conf
+    ~/.local/share/akonadi
+    ~/.local/share/akonadi_migration_agent
+    ~/.local/share/apps
+    ~/.local/share/ark
+    ~/.local/share/contacts
+    ~/.local/share/dolphin
+    ~/.local/share/kded5
+    ~/.local/share/kwalletd
+    ~/.local/share/kwrite
+    ~/.local/share/kpeople
+    ~/.local/share/gwenview
+    ~/.local/share/kactivitymanagerd
+    ~/.local/share/kate
+    ~/.local/share/kcookiejar
+    ~/.local/share/KDE
+    ~/.local/share/kded5
+    ~/.local/share/klipper
+    ~/.local/share/knewstuff3
+    ~/.local/share/konsole
+    ~/.local/share/kpeoplevcard
+    ~/.local/share/kscreen
+    ~/.local/share/kwalletd
+    ~/.local/share/local-mail
+    ~/.local/share/okular
+    ~/.local/share/plasma-systemmonitor
+    ~/.local/share/remoteview
+    ~/.local/share/sddm
+    ~/.local/share/user-places.xbel
+    ~/.local/share/user-places.xbel.bak
+    ~/.local/share/user-places.xbel.tbcache
+    ~/.local/share/krunnerstaterc
+    ~/.local/share/recently-used.xbel
+    ~/.gtkrc-2.0
+)
+
 GNOME_PACKAGES=(
     evince
     gdm
@@ -93,7 +159,6 @@ GNOME_PACKAGES=(
     gnome-system-monitor
     gnome-text-editor
     gnome-user-share
-    gnome-weather
     grilo-plugins
     gvfs
     gvfs-afc
@@ -110,7 +175,6 @@ GNOME_PACKAGES=(
     rygel
     sushi
     tecla
-    totem
     tracker3-miners
     xdg-desktop-portal-gnome
     xdg-user-dirs-gtk
@@ -118,9 +182,69 @@ GNOME_PACKAGES=(
     gnome-themes-extra
     gnome-browser-connector
     kvantum
+    celluloid
     fragments
     file-roller
     python-nautilus
+)
+
+GNOME_CONFIGS=(
+    ~/.cache/
+    ~/.config/BraveSoftware
+    ~/.config/celluloid
+    ~/.config/chromium
+    ~/.config/dconf
+    ~/.config/evolution
+    ~/.config/fragments
+    ~/.config/gnome-control-center
+    ~/.config/goa-1.0
+    ~/.config/google-chrome
+    ~/.config/google-chrome-beta
+    ~/.config/google-chrome-unstable
+    ~/.config/gsconnect
+    ~/.config/gtk-3.0
+    ~/.config/gtk-4.0
+    ~/.config/Kvantum
+    ~/.config/menus
+    ~/.config/microsoft-edge-beta
+    ~/.config/microsoft-edge-dev
+    ~/.config/nautilus
+    ~/.config/.gsd-keyboard.settings-ported
+    ~/.gnome
+    ~/.local/share/applications/avahi-discover.desktop
+    ~/.local/share/applications/bssh.desktop
+    ~/.local/share/applications/bvnc.desktop
+    ~/.local/share/applications/code.desktop
+    ~/.local/share/applications/libreoffice-base.desktop
+    ~/.local/share/applications/libreoffice-math.desktop
+    ~/.local/share/applications/libreoffice-startcenter.desktop
+    ~/.local/share/applications/lstopo.desktop
+    ~/.local/share/applications/menulibre.desktop
+    ~/.local/share/applications/mpv.desktop
+    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.desktop
+    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.Preferences.desktop
+    ~/.local/share/applications/qv4l2.desktop
+    ~/.local/share/applications/qvidcap.desktop
+    ~/.local/share/applications/vim.desktop
+    ~/.local/share/applications/ipython.desktop
+    ~/.local/share/applications/jupyterlab.desktop
+    ~/.local/share/applications/jupyter-notebook.desktop
+    ~/.local/share/applications/kvantummanager.desktop
+    ~/.local/share/applications/org.gnome.Characters.desktop
+    ~/.local/share/backgrounds
+    ~/.local/share/baloo
+    ~/.local/share/desktop-directories
+    ~/.local/share/evolution
+    ~/.local/share/gnome-control-center-goa-helper
+    ~/.local/share/gnome-settings-daemon
+    ~/.local/share/gnome-shell
+    ~/.local/share/gvfs-metadata
+    ~/.local/share/keyrings
+    ~/.local/share/nautilus
+    ~/.local/share/nautilus-python
+    ~/.local/share/nemo-python
+    ~/.local/share/org.gnome.TextEditor
+    ~/.mozilla/firefox/*default*/chrome
 )
 
 read -p $'ESCOLHA O DESKTOP A SER INSTALADO\n1) Gnome\n2) Plasma\nInstalar: ' DESKTOP
@@ -163,13 +287,13 @@ if [ $DESKTOP = "1" ]; then
         if [ ${CLEAN^^} = "S" ]; then           
             clear
             echo "Removendo Plasma" && sleep 3 && clear
-            sudo pacman -Rsn "${PLASMA_PACKAGES[@]}" --noconfirm
+            sudo pacman -Rsn "${PLASMA_PACKAGES[@]}" --noconfirm && clear
 
+            echo "Removendo dotfiles" && sleep 3
+            for files in "${PLASMA_CONFIGS[@]}"; do
+                rm -rf "$files"
+            done
             clear
-
-            echo "Removendo dotfiles" && sleep 3 && clear
-
-            rm -rf /home/marshall/.cache/ /home/marshall/.config/akonadi /home/marshall/.config/fontconfig/ /home/marshall/.config/gtk-3.0 /home/marshall/.config/gtk-4.0 /home/marshall/.config/kate /home/marshall/.config/KDE /home/marshall/.config/kde.org /home/marshall/.config/kdeconnect /home/marshall/.config/kdedefaults /home/marshall/.config/libaccounts-glib /home/marshall/.config/menus /home/marshall/.config/plasma-workspace /home/marshall/.config/pulse /home/marshall/.config/session /home/marshall/.config/signond /home/marshall/.config/xsettingsd /home/marshall/.config/transmission /home/marshall/.config/konsolerc /home/marshall/.config/okularrc /home/marshall/.config/akonadi_akonotes_resource_0rc /home/marshall/.config/akonadi_contacts_resource_0rc /home/marshall/.config/akonadi_google_resource_0rc /home/marshall/.config/akonadi_ical_resource_0rc /home/marshall/.config/akonadi_indexing_agentrc /home/marshall/.config/akonadi_maildir_resource_0rc /home/marshall/.config/akonadi-firstrunrc /home/marshall/.config/akregatorrc /home/marshall/.config/kwritemetainfos /home/marshall/.config/kwriterc /home/marshall/.config/akregatorrc /home/marshall/.config/baloofilerc /home/marshall/.config/bluedevilglobalrc /home/marshall/.config/defaultcalendarrc /home/marshall/.config/discoverrc /home/marshall/.config/dolphinrc /home/marshall/.config/emaildefaults /home/marshall/.config/emailidentities /home/marshall/.config/gtkrc /home/marshall/.config/gtkrc-2.0 /home/marshall/.config/gwenviewrc /home/marshall/.config/kactivitymanagerd-statsrc /home/marshall/.config/kactivitymanagerdrc /home/marshall/.config/katemetainfos /home/marshall/.config/katerc /home/marshall/.config/kateschemarc /home/marshall/.config/katevirc /home/marshall/.config/kcminputrc /home/marshall/.config/kconf_updaterc /home/marshall/.config/kded5rc /home/marshall/.config/kdeglobals /home/marshall/.config/kfontinstuirc /home/marshall/.config/kglobalshortcutsrc /home/marshall/.config/khotkeysrc /home/marshall/.config/kiorc /home/marshall/.config/kmail2rc /home/marshall/.config/kmenueditrc /home/marshall/.config/kmixrc /home/marshall/.config/konsolesshconfig /home/marshall/.config/kritadisplayrc /home/marshall/.config/kritarc /home/marshall/.config/krunnerrc /home/marshall/.config/kscreenlockerrc /home/marshall/.config/ksmserverrc /home/marshall/.config/ktimezonedrc /home/marshall/.config/kwalletrc /home/marshall/.config/kwinrc /home/marshall/.config/kwinrulesrc /home/marshall/.config/kxkbrc /home/marshall/.config/mimeapps.list /home/marshall/.config/okularpartrc /home/marshall/.config/plasma-localerc /home/marshall/.config/plasma-org.kde.plasma.desktop-appletsrc /home/marshall/.config/plasma-welcomerc /home/marshall/.config/plasmanotifyrc /home/marshall/.config/plasmashellrc /home/marshall/.config/QtProject.conf /home/marshall/.config/specialmailcollectionsrc /home/marshall/.config/spectaclerc /home/marshall/.config/systemsettingsrc /home/marshall/.config/trashrc /home/marshall/.config/Trolltech.conf /home/marshall/.config/webengineurlinterceptoradblockrc /home/marshall/.local/share/dolphin /home/marshall/.local/share/kded5 /home/marshall/.local/share/kwalletd /home/marshall/.local/share/kwrite /home/marshall/.local/share/kpeople /home/marshall/.local/share/gwenview /home/marshall/.local/share/kactivitymanagerd /home/marshall/.local/share/kate /home/marshall/.local/share/kcookiejar /home/marshall/.local/share/KDE /home/marshall/.local/share/kded5 /home/marshall/.local/share/klipper /home/marshall/.local/share/knewstuff3 /home/marshall/.local/share/konsole /home/marshall/.local/share/kpeoplevcard /home/marshall/.local/share/krita /home/marshall/.local/share/kscreen /home/marshall/.local/share/kwalletd /home/marshall/.local/share/local-mail /home/marshall/.local/share/remoteview /home/marshall/.local/share/sddm /home/marshall/.local/share/user-places.xbel.bak /home/marshall/.local/share/krunnerstaterc /home/marshall/.local/share/user-places.xbel.tbcache /home/marshall/.local/share/krita-sysinfo.log /home/marshall/.local/share/krita.log /home/marshall/.local/share/recently-used.xbel /home/marshall/.local/share/user-places.xbel /home/marshall/.gtkrc-2.0 /home/marshall/.config/defaultcalendarrc /home/marshall/.config/emaildefaults /home/marshall/.config/emailidentities /home/marshall/.config/harunarc /home/marshall/.config/kalendaracrc /home/marshall/.config/kalendarrc /home/marshall/.config/merkuro.calendarrc /home/marshall/.config/powerdevilrc /home/marshall/.config/powermanagementprofilesrc /home/marshall/.config/specialmailcollectionsrc /home/marshall/.config/systemmonitorrc /home/marshall/.config/webengineurlinterceptoradblockrc /home/marshall/.local/share/akonadi /home/marshall/.local/share/akonadi_migration_agent /home/marshall/.local/share/apps /home/marshall/.local/share/contacts /home/marshall/.local/share/kwalletd /home/marshall/.local/share/local-mail
         fi
     else
         sudo systemctl enable gdm && sleep 1 && clear
@@ -182,7 +306,8 @@ if [ $DESKTOP = "1" ]; then
     read -p $'Reiniciar o sistema? (s/N): ' REBOOT
     REBOOT="${REBOOT:-"N"}"
     if [ ${REBOOT^^} = "S" ]; then
-        echo "Reiniciando" && sleep 3
+        echo "Reiniciando..." && sleep 3
+        reboot
     else
         echo "Encerrando script de instalação..."
     fi
@@ -203,16 +328,15 @@ elif [ $DESKTOP = "2" ]; then
         CLEAN="${CLEAN:-"N"}"
         if [ ${CLEAN^^} = "S" ]; then           
             clear
-
             echo "Removendo Gnome" && sleep 3 && clear
+            yay -Rsn adw-gtk-theme menulibre --noconfirm
+            sudo pacman -Rsn "${GNOME_PACKAGES[@]}" --noconfirm && clear
 
-            sudo pacman -Rsn "${GNOME_PACKAGES[@]}" --noconfirm
-
+            echo "Removendo dotfiles" && sleep 3
+            for files in "${GNOME_CONFIGS[@]}"; do
+                rm -rf "$files"
+            done
             clear
-
-            echo "Removendo dotfiles" && sleep 3 && clear
-
-            rm -rf /home/marshall/.cache/ /home/marshall/.config/BraveSoftware /home/marshall/.config/chromium /home/marshall/.config/dconf /home/marshall/.config/evolution /home/marshall/.config/gnome-control-center /home/marshall/.config/goa-1.0 /home/marshall/.config/google-chrome /home/marshall/.config/google-chrome-beta /home/marshall/.config/google-chrome-unstable /home/marshall/.config/gsconnect /home/marshall/.config/gtk-3.0 /home/marshall/.config/gtk-4.0 /home/marshall/.config/Kvantum /home/marshall/.config/menus /home/marshall/.config/microsoft-edge-beta /home/marshall/.config/microsoft-edge-dev /home/marshall/.config/nautilus /home/marshall/.config/.gsd-keyboard.settings-ported /home/marshall/.config/baloofileinformationrc /home/marshall/.gnome /home/marshall/.local/share/applications/avahi-discover.desktop /home/marshall/.local/share/applications/bssh.desktop /home/marshall/.local/share/applications/bvnc.desktop /home/marshall/.local/share/applications/code.desktop /home/marshall/.local/share/applications/libreoffice-base.desktop /home/marshall/.local/share/applications/libreoffice-draw.desktop /home/marshall/.local/share/applications/libreoffice-math.desktop /home/marshall/.local/share/applications/libreoffice-startcenter.desktop /home/marshall/.local/share/applications/lstopo.desktop /home/marshall/.local/share/applications/menulibre.desktop /home/marshall/.local/share/applications/mpv.desktop /home/marshall/.local/share/applications/org.gnome.DiskUtility.desktop /home/marshall/.local/share/applications/org.gnome.Evince.desktop /home/marshall/.local/share/applications/org.gnome.FileRoller.desktop /home/marshall/.local/share/applications/org.gnome.font-viewer.desktop /home/marshall/.local/share/applications/org.gnome.Loupe.desktop /home/marshall/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.desktop /home/marshall/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.Preferences.desktop /home/marshall/.local/share/applications/qv4l2.desktop /home/marshall/.local/share/applications/qvidcap.desktop /home/marshall/.local/share/applications/vim.desktop /home/marshall/.local/share/backgrounds /home/marshall/.local/share/baloo /home/marshall/.local/share/desktop-directories /home/marshall/.local/share/evolution /home/marshall/.local/share/gnome-control-center-goa-helper /home/marshall/.local/share/gnome-settings-daemon /home/marshall/.local/share/gnome-shell /home/marshall/.local/share/gvfs-metadata /home/marshall/.local/share/keyrings /home/marshall/.local/share/nautilus /home/marshall/.local/share/nautilus-python /home/marshall/.local/share/nemo-python /home/marshall/.local/share/org.gnome.TextEditor /home/marshall/.mozilla/firefox/*default*/chrome
         fi
     else
         sudo systemctl enable sddm && sleep 1 && clear
@@ -225,7 +349,8 @@ elif [ $DESKTOP = "2" ]; then
     read -p $'Reiniciar o sistema? (s/N): ' REBOOT
     REBOOT="${REBOOT:-"N"}"
     if [ ${REBOOT^^} = "S" ]; then
-        echo "Reiniciando" && sleep 3
+        echo "Reiniciando..." && sleep 3
+        reboot
     else
         echo "Encerrando script de instalação..."
     fi
