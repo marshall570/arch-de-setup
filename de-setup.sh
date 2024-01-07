@@ -63,7 +63,6 @@ PLASMA_PACKAGES=(
     packagekit-qt5
     qt5-imageformats
     kwalletmanager
-    transmission-qt
     merkuro
     kdepim-addons
     kio-gdrive
@@ -90,7 +89,6 @@ PLASMA_CONFIGS=(
     ~/.config/session
     ~/.config/signond
     ~/.config/xsettingsd
-    ~/.config/transmission
     ~/.config/*rc
     ~/.config/kwritemetainfos
     ~/.config/emaildefaults
@@ -183,7 +181,6 @@ GNOME_PACKAGES=(
     gnome-browser-connector
     kvantum
     celluloid
-    fragments
     file-roller
     python-nautilus
 )
@@ -195,7 +192,6 @@ GNOME_CONFIGS=(
     ~/.config/chromium
     ~/.config/dconf
     ~/.config/evolution
-    ~/.config/fragments
     ~/.config/gnome-control-center
     ~/.config/goa-1.0
     ~/.config/google-chrome
