@@ -63,9 +63,6 @@ PLASMA_PACKAGES=(
     packagekit-qt5
     qt5-imageformats
     kwalletmanager
-    merkuro
-    kdepim-addons
-    kio-gdrive
     partitionmanager
     ffmpegthumbs
     ffmpegthumbnailer
@@ -73,7 +70,6 @@ PLASMA_PACKAGES=(
 
 PLASMA_CONFIGS=(
     ~/.cache/
-    ~/.config/akonadi
     ~/.config/fontconfig/
     ~/.config/gtk-3.0
     ~/.config/gtk-4.0
@@ -91,8 +87,6 @@ PLASMA_CONFIGS=(
     ~/.config/xsettingsd
     ~/.config/*rc
     ~/.config/kwritemetainfos
-    ~/.config/emaildefaults
-    ~/.config/emailidentities
     ~/.config/gtkrc-2.0
     ~/.config/katemetainfos
     ~/.config/kdeglobals
@@ -101,11 +95,8 @@ PLASMA_CONFIGS=(
     ~/.config/mimeapps.list
     ~/.config/QtProject.conf
     ~/.config/Trolltech.conf
-    ~/.local/share/akonadi
-    ~/.local/share/akonadi_migration_agent
-    ~/.local/share/apps
+   ~/.local/share/apps
     ~/.local/share/ark
-    ~/.local/share/contacts
     ~/.local/share/dolphin
     ~/.local/share/kded5
     ~/.local/share/kwalletd
@@ -123,7 +114,6 @@ PLASMA_CONFIGS=(
     ~/.local/share/kpeoplevcard
     ~/.local/share/kscreen
     ~/.local/share/kwalletd
-    ~/.local/share/local-mail
     ~/.local/share/okular
     ~/.local/share/plasma-systemmonitor
     ~/.local/share/remoteview
@@ -187,7 +177,6 @@ GNOME_PACKAGES=(
 
 GNOME_CONFIGS=(
     ~/.cache/
-    ~/.config/BraveSoftware
     ~/.config/celluloid
     ~/.config/chromium
     ~/.config/dconf
