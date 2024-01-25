@@ -41,6 +41,7 @@ PLASMA_PACKAGES=(
     plasma-thunderbolt
     plasma-vault
     plasma-workspace
+    plasma-workspace-wallpapers
     plymouth-kcm
     polkit-kde-agent
     powerdevil
