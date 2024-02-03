@@ -95,10 +95,11 @@ PLASMA_CONFIGS=(
     ~/.config/kdeglobals
     ~/.config/konsolesshconfig
     ~/.config/PlasmaDiscoverUpdates
+    ~/.config/print-manager
     ~/.config/mimeapps.list
     ~/.config/QtProject.conf
     ~/.config/Trolltech.conf
-   ~/.local/share/apps
+    ~/.local/share/apps
     ~/.local/share/ark
     ~/.local/share/dolphin
     ~/.local/share/kded5
@@ -184,8 +185,10 @@ GNOME_CONFIGS=(
     ~/.config/celluloid
     ~/.config/chromium
     ~/.config/dconf
+    ~/.config/evince
     ~/.config/evolution
     ~/.config/gnome-control-center
+    ~/.config/gnome-session
     ~/.config/goa-1.0
     ~/.config/google-chrome
     ~/.config/google-chrome-beta
@@ -198,6 +201,7 @@ GNOME_CONFIGS=(
     ~/.config/microsoft-edge-beta
     ~/.config/microsoft-edge-dev
     ~/.config/nautilus
+    ~/.config/simple-scan
     ~/.config/.gsd-keyboard.settings-ported
     ~/.gnome
     ~/.local/share/applications/avahi-discover.desktop
