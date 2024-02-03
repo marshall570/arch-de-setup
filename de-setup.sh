@@ -62,6 +62,8 @@ PLASMA_PACKAGES=(
     spectacle
     konsole
     packagekit-qt5
+    print-manager
+    skanlite
     qt5-imageformats
     kwalletmanager
     partitionmanager
@@ -174,6 +176,7 @@ GNOME_PACKAGES=(
     celluloid
     file-roller
     python-nautilus
+    simple-scan
 )
 
 GNOME_CONFIGS=(
