@@ -49,7 +49,6 @@ PLASMA_PACKAGES=(
     sddm-kcm
     systemsettings
     xdg-desktop-portal-kde
-    plasma-wayland-session
     plasma-wayland-protocols
     dolphin
     ark
@@ -63,7 +62,7 @@ PLASMA_PACKAGES=(
     konsole
     packagekit-qt5
     print-manager
-    skanlite
+    skanpage
     qt5-imageformats
     kwalletmanager
     partitionmanager
