@@ -14,7 +14,6 @@ PLASMA_PACKAGES=(
     kdecoration
     kdeplasma-addons
     kgamma
-    khotkeys
     kinfocenter
     kmenuedit
     kpipewire
@@ -68,6 +67,8 @@ PLASMA_PACKAGES=(
     partitionmanager
     ffmpegthumbs
     ffmpegthumbnailer
+    merkuro
+    kdepim-addons
 )
 
 PLASMA_CONFIGS=(
