@@ -279,7 +279,7 @@ if [ $DESKTOP = "1" ]; then
         if [ ${CLEAN^^} = "S" ]; then           
             clear
             echo "Removendo Plasma" && sleep 3 && clear
-            sudo pacman -Rsn "${PLASMA_PACKAGES[@]}" --noconfirm && clear
+            sudo pacman -Rcsn "${PLASMA_PACKAGES[@]}" --noconfirm && clear
 
             echo "Removendo dotfiles" && sleep 3
             for files in "${PLASMA_CONFIGS[@]}"; do
