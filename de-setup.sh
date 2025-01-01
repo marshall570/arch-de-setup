@@ -56,6 +56,7 @@ PLASMA_PACKAGES=(
     kate
     kdeconnect
     gwenview
+    haruna
     okular
     spectacle
     konsole
@@ -69,10 +70,6 @@ PLASMA_PACKAGES=(
     ffmpegthumbnailer
     merkuro
     kdepim-addons
-)
-
-PLASMA_FLATPAKS=(
-    org.kde.haruna
 )
 
 PLASMA_CONFIGS=(
@@ -270,7 +267,6 @@ if [ $DESKTOP = "1" ]; then
             clear
             echo "Removendo Plasma" && sleep 3 && clear
             sudo pacman -Rcsn "${PLASMA_PACKAGES[@]}" --noconfirm && clear
-            flatpak uninstall "${PLASMA_FLATPAKS[@]}"
 
             echo "Removendo dotfiles" && sleep 3
             for files in "${PLASMA_CONFIGS[@]}"; do
@@ -301,7 +297,6 @@ elif [ $DESKTOP = "2" ]; then
     echo "Instalando Plasma" && sleep 3 && clear
 
     sudo pacman -Syu "${PLASMA_PACKAGES[@]}" --noconfirm
-    flatpak install "${PLASMA_FLATPAKS[@]}" -y
     mkdir /home/marshall/.config/fontconfig/ && wget https://raw.githubusercontent.com/GaKu999/dotfiles/main/.config/fontconfig/fonts.conf -O ~/.config/fontconfig/fonts.conf
     clear
 
@@ -315,7 +310,7 @@ elif [ $DESKTOP = "2" ]; then
             echo "Removendo Gnome" && sleep 3 && clear
             yay -Rsn menulibre --noconfirm
             sudo pacman -Rcsn "${GNOME_PACKAGES[@]}" --noconfirm && clear
-            flatpak uninstall "${PLASMA_FLATPAKS[@]}" -y
+            flatpak uninstall "${GNOME_FLATPAKS[@]}" -y
 
             echo "Removendo dotfiles" && sleep 3
             for files in "${GNOME_CONFIGS[@]}"; do
