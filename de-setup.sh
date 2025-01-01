@@ -74,6 +74,7 @@ PLASMA_PACKAGES=(
 
 PLASMA_CONFIGS=(
     ~/.cache/
+    ~/.config/akonadi
     ~/.config/fontconfig/
     ~/.config/gtk-3.0
     ~/.config/gtk-4.0
@@ -98,9 +99,11 @@ PLASMA_CONFIGS=(
     ~/.config/PlasmaDiscoverUpdates
     ~/.config/print-manager
     ~/.config/mimeapps.list
+    ~/.config/kwinoutputconfig.json
     ~/.config/QtProject.conf
     ~/.config/Trolltech.conf
     ~/.local/share/apps
+    ~/.local/share/akonadi
     ~/.local/share/ark
     ~/.local/share/dolphin
     ~/.local/share/kded5
@@ -112,13 +115,14 @@ PLASMA_CONFIGS=(
     ~/.local/share/kate
     ~/.local/share/kcookiejar
     ~/.local/share/KDE
-    ~/.local/share/kded5
+    ~/.local/share/kded6
     ~/.local/share/klipper
     ~/.local/share/knewstuff3
     ~/.local/share/konsole
     ~/.local/share/kpeoplevcard
     ~/.local/share/kscreen
     ~/.local/share/kwalletd
+    ~/.local/share/libkunitconversion
     ~/.local/share/okular
     ~/.local/share/plasma-systemmonitor
     ~/.local/share/remoteview
