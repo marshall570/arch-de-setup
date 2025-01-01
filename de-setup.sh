@@ -47,6 +47,7 @@ PLASMA_PACKAGES=(
     sddm
     sddm-kcm
     systemsettings
+    system-config-printer
     xdg-desktop-portal-kde
     plasma-wayland-protocols
     dolphin
@@ -55,7 +56,6 @@ PLASMA_PACKAGES=(
     kate
     kdeconnect
     gwenview
-    haruna
     okular
     spectacle
     konsole
@@ -69,6 +69,10 @@ PLASMA_PACKAGES=(
     ffmpegthumbnailer
     merkuro
     kdepim-addons
+)
+
+PLASMA_FLATPAKS=(
+    org.kde.haruna
 )
 
 PLASMA_CONFIGS=(
@@ -131,8 +135,10 @@ PLASMA_CONFIGS=(
 )
 
 GNOME_PACKAGES=(
+    adw-gtk-theme
     evince
     gdm
+    geary
     gnome-backgrounds
     gnome-calculator
     gnome-calendar
@@ -147,7 +153,6 @@ GNOME_PACKAGES=(
     gnome-session
     gnome-settings-daemon
     gnome-shell
-    gnome-shell-extensions
     gnome-system-monitor
     gnome-text-editor
     gnome-user-share
@@ -167,17 +172,20 @@ GNOME_PACKAGES=(
     rygel
     sushi
     tecla
-    tracker3-miners
     xdg-desktop-portal-gnome
     xdg-user-dirs-gtk
     gnome-tweaks
     gnome-themes-extra
     gnome-browser-connector
-    kvantum
-    celluloid
-    file-roller
-    python-nautilus
     simple-scan
+)
+
+GNOME_FLATPAKS=(
+    de.haeckerfelix.Fragments
+    io.github.celluloid_player.Celluloid
+    org.gnome.Extensions
+    org.gnome.NetworkDisplays
+    org.gnome.FileRoller
 )
 
 GNOME_CONFIGS=(
@@ -204,26 +212,7 @@ GNOME_CONFIGS=(
     ~/.config/simple-scan
     ~/.config/.gsd-keyboard.settings-ported
     ~/.gnome
-    ~/.local/share/applications/avahi-discover.desktop
-    ~/.local/share/applications/bssh.desktop
-    ~/.local/share/applications/bvnc.desktop
-    ~/.local/share/applications/code.desktop
-    ~/.local/share/applications/libreoffice-base.desktop
-    ~/.local/share/applications/libreoffice-math.desktop
-    ~/.local/share/applications/libreoffice-startcenter.desktop
-    ~/.local/share/applications/lstopo.desktop
-    ~/.local/share/applications/menulibre.desktop
-    ~/.local/share/applications/mpv.desktop
-    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.desktop
-    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.Preferences.desktop
-    ~/.local/share/applications/qv4l2.desktop
-    ~/.local/share/applications/qvidcap.desktop
-    ~/.local/share/applications/vim.desktop
-    ~/.local/share/applications/ipython.desktop
-    ~/.local/share/applications/jupyterlab.desktop
-    ~/.local/share/applications/jupyter-notebook.desktop
-    ~/.local/share/applications/kvantummanager.desktop
-    ~/.local/share/applications/org.gnome.Characters.desktop
+    ~/.local/share/applications/
     ~/.local/share/backgrounds
     ~/.local/share/baloo
     ~/.local/share/desktop-directories
@@ -237,7 +226,6 @@ GNOME_CONFIGS=(
     ~/.local/share/nautilus-python
     ~/.local/share/nemo-python
     ~/.local/share/org.gnome.TextEditor
-    ~/.mozilla/firefox/*default*/chrome
 )
 
 read -p $'ESCOLHA O DESKTOP A SER INSTALADO\n1) Gnome\n2) Plasma\nInstalar: ' DESKTOP
@@ -251,7 +239,8 @@ if [ $DESKTOP = "1" ]; then
     clear
 
     sudo pacman -Syu "${GNOME_PACKAGES[@]}" --noconfirm
-    yay -Syu adw-gtk-theme menulibre --noconfirm
+    flatpak install "${GNOME_FLATPAKS[@]}" -y
+    yay -Syu menulibre --noconfirm
     curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
     mkdir ~/.config/Kvantum && git clone https://github.com/GabePoel/KvLibadwaita.git && cd KvLibadwaita/src/ && cp -r KvLibadwaita ~/.config/Kvantum && cd ~ && kvantummanager --set KvLibadwaitaDark && rm -rf KvLibadwaita
 
@@ -281,6 +270,7 @@ if [ $DESKTOP = "1" ]; then
             clear
             echo "Removendo Plasma" && sleep 3 && clear
             sudo pacman -Rcsn "${PLASMA_PACKAGES[@]}" --noconfirm && clear
+            flatpak uninstall "${PLASMA_FLATPAKS[@]}"
 
             echo "Removendo dotfiles" && sleep 3
             for files in "${PLASMA_CONFIGS[@]}"; do
@@ -311,6 +301,7 @@ elif [ $DESKTOP = "2" ]; then
     echo "Instalando Plasma" && sleep 3 && clear
 
     sudo pacman -Syu "${PLASMA_PACKAGES[@]}" --noconfirm
+    flatpak install "${PLASMA_FLATPAKS[@]}" -y
     mkdir /home/marshall/.config/fontconfig/ && wget https://raw.githubusercontent.com/GaKu999/dotfiles/main/.config/fontconfig/fonts.conf -O ~/.config/fontconfig/fonts.conf
     clear
 
@@ -322,8 +313,9 @@ elif [ $DESKTOP = "2" ]; then
         if [ ${CLEAN^^} = "S" ]; then           
             clear
             echo "Removendo Gnome" && sleep 3 && clear
-            yay -Rsn adw-gtk-theme menulibre --noconfirm
-            sudo pacman -Rsn "${GNOME_PACKAGES[@]}" --noconfirm && clear
+            yay -Rsn menulibre --noconfirm
+            sudo pacman -Rcsn "${GNOME_PACKAGES[@]}" --noconfirm && clear
+            flatpak uninstall "${PLASMA_FLATPAKS[@]}" -y
 
             echo "Removendo dotfiles" && sleep 3
             for files in "${GNOME_CONFIGS[@]}"; do
