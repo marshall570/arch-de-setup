@@ -141,21 +141,18 @@ GNOME_PACKAGES=(
     gdm
     geary
     gnome-backgrounds
-    gnome-calculator
     gnome-calendar
     gnome-characters
     gnome-color-manager
     gnome-console
     gnome-control-center
     gnome-disk-utility
-    gnome-font-viewer
     gnome-keyring
     gnome-menus
     gnome-session
     gnome-settings-daemon
     gnome-shell
     gnome-system-monitor
-    gnome-text-editor
     gnome-user-share
     grilo-plugins
     gvfs
@@ -166,7 +163,6 @@ GNOME_PACKAGES=(
     gvfs-mtp
     gvfs-nfs
     gvfs-smb
-    loupe
     malcontent
     nautilus
     orca
@@ -178,12 +174,16 @@ GNOME_PACKAGES=(
     gnome-tweaks
     gnome-themes-extra
     gnome-browser-connector
-    simple-scan
 )
 
 GNOME_FLATPAKS=(
     de.haeckerfelix.Fragments
     io.github.celluloid_player.Celluloid
+    org.gnome.Calculator
+    org.gnome.SimpleScan
+    org.gnome.font-viewer
+    org.gnome.TextEditor
+    org.gnome.Loupe
     org.gnome.Extensions
     org.gnome.NetworkDisplays
     org.gnome.FileRoller
