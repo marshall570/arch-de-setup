@@ -69,6 +69,8 @@ PLASMA_PACKAGES=(
     ffmpegthumbs
     ffmpegthumbnailer
     merkuro
+    krfb
+    kio-gdrive
     kdepim-addons
 )
 
@@ -179,6 +181,7 @@ GNOME_PACKAGES=(
 GNOME_FLATPAKS=(
     de.haeckerfelix.Fragments
     io.github.celluloid_player.Celluloid
+    org.bluesabre.MenuLibre
     org.gnome.Calculator
     org.gnome.SimpleScan
     org.gnome.font-viewer
