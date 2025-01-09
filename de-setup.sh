@@ -244,9 +244,7 @@ if [ $DESKTOP = "1" ]; then
 
     sudo pacman -Syu "${GNOME_PACKAGES[@]}" --noconfirm
     flatpak install "${GNOME_FLATPAKS[@]}" -y
-    yay -Syu menulibre --noconfirm
     curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
-    mkdir ~/.config/Kvantum && git clone https://github.com/GabePoel/KvLibadwaita.git && cd KvLibadwaita/src/ && cp -r KvLibadwaita ~/.config/Kvantum && cd ~ && kvantummanager --set KvLibadwaitaDark && rm -rf KvLibadwaita
 
     echo "Aplicando configurações..." && sleep 1
     echo "- Ordenação de arquivos" ; gsettings set org.gnome.nautilus.preferences default-sort-order 'type'
