@@ -21,6 +21,7 @@ PLASMA_PACKAGES=(
     kscreenlocker
     ksshaskpass
     ksystemstats
+    kwallet
     kwallet-pam
     kwayland-integration
     kwin
@@ -49,6 +50,7 @@ PLASMA_PACKAGES=(
     systemsettings
     system-config-printer
     xdg-desktop-portal-kde
+    xdg-desktop-portal-gtk
     plasma-wayland-protocols
     dolphin
     ark
@@ -69,7 +71,7 @@ PLASMA_PACKAGES=(
     ffmpegthumbs
     ffmpegthumbnailer
     merkuro
-    krfb
+    kmail
     kio-gdrive
     kdepim-addons
 )
@@ -179,7 +181,6 @@ GNOME_PACKAGES=(
 )
 
 GNOME_FLATPAKS=(
-    de.haeckerfelix.Fragments
     io.github.celluloid_player.Celluloid
     org.bluesabre.MenuLibre
     org.gnome.Calculator
@@ -208,7 +209,6 @@ GNOME_CONFIGS=(
     ~/.config/gsconnect
     ~/.config/gtk-3.0
     ~/.config/gtk-4.0
-    ~/.config/Kvantum
     ~/.config/menus
     ~/.config/microsoft-edge-beta
     ~/.config/microsoft-edge-dev
@@ -216,7 +216,16 @@ GNOME_CONFIGS=(
     ~/.config/simple-scan
     ~/.config/.gsd-keyboard.settings-ported
     ~/.gnome
-    ~/.local/share/applications/
+    ~/.local/share/applications/avahi-discover.desktop
+    ~/.local/share/applications/bssh.desktop
+    ~/.local/share/applications/bvnc.desktop
+    ~/.local/share/applications/org.freedesktop.MalcontentControl.desktop
+    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.desktop
+    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.Preferences.desktop
+    ~/.local/share/applications/qv4l2.desktop
+    ~/.local/share/applications/qvidcap.desktop
+    ~/.local/share/applications/vim.desktop
+    ~/.local/share/applications/defaults.list
     ~/.local/share/backgrounds
     ~/.local/share/baloo
     ~/.local/share/desktop-directories
@@ -248,7 +257,7 @@ if [ $DESKTOP = "1" ]; then
 
     echo "Aplicando configurações..." && sleep 1
     echo "- Ordenação de arquivos" ; gsettings set org.gnome.nautilus.preferences default-sort-order 'type'
-    echo "- Tema da interface" ; gsettings set org.gnome.desktop.interface gtk-theme Adw-dark
+    echo "- Tema da interface" ; gsettings set org.gnome.desktop.interface gtk-theme Adw-gtk3-dark
     echo "- Tema de ícones" ; gsettings set org.gnome.desktop.interface icon-theme Adwaita
     echo "- Tema do cursor" ; gsettings set org.gnome.desktop.interface cursor-theme Adwaita
     echo "- Botões de janela" ; gsettings set org.gnome.desktop.wm.preferences button-layout ':close'
@@ -269,7 +278,7 @@ if [ $DESKTOP = "1" ]; then
         read -p $'Remover o outro DE? (s/N): ' CLEAN
         CLEAN="${CLEAN:-"N"}"
         if [ ${CLEAN^^} = "S" ]; then           
-            clear
+            clear 
             echo "Removendo Plasma" && sleep 3 && clear
             sudo pacman -Rcsn "${PLASMA_PACKAGES[@]}" --noconfirm && clear
 
@@ -302,7 +311,7 @@ elif [ $DESKTOP = "2" ]; then
     echo "Instalando Plasma" && sleep 3 && clear
 
     sudo pacman -Syu "${PLASMA_PACKAGES[@]}" --noconfirm
-    mkdir /home/marshall/.config/fontconfig/ && wget https://raw.githubusercontent.com/GaKu999/dotfiles/main/.config/fontconfig/fonts.conf -O ~/.config/fontconfig/fonts.conf
+    mkdir ~/.config/fontconfig/ && wget  https://raw.githubusercontent.com/GaKu999/dotfiles/refs/heads/jormungandr/.config/fontconfig/fonts.conf -O ~/.config/fontconfig/fonts.conf
     clear
 
     if pacman -Qs gdm > /dev/null ; then
@@ -313,7 +322,6 @@ elif [ $DESKTOP = "2" ]; then
         if [ ${CLEAN^^} = "S" ]; then           
             clear
             echo "Removendo Gnome" && sleep 3 && clear
-            yay -Rsn menulibre --noconfirm
             sudo pacman -Rcsn "${GNOME_PACKAGES[@]}" --noconfirm && clear
             flatpak uninstall "${GNOME_FLATPAKS[@]}" -y
 
