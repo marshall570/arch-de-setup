@@ -239,6 +239,7 @@ GNOME_CONFIGS=(
     ~/.local/share/nautilus-python
     ~/.local/share/nemo-python
     ~/.local/share/org.gnome.TextEditor
+
 )
 
 read -p $'ESCOLHA O DESKTOP A SER INSTALADO\n1) Gnome\n2) Plasma\nInstalar: ' DESKTOP
@@ -328,6 +329,7 @@ elif [ $DESKTOP = "2" ]; then
             echo "Removendo dotfiles" && sleep 3
             for files in "${GNOME_CONFIGS[@]}"; do
                 rm -rf "$files"
+		rm -rf .mozilla/firefox/*default*/chrome
             done
             clear
         fi
