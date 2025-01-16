@@ -63,6 +63,7 @@ PLASMA_PACKAGES=(
     spectacle
     konsole
     packagekit-qt5
+    packagekit-qt6
     print-manager
     skanpage
     qt5-imageformats
