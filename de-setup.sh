@@ -71,8 +71,6 @@ PLASMA_PACKAGES=(
     partitionmanager
     ffmpegthumbs
     ffmpegthumbnailer
-    merkuro
-    kmail
     kio-gdrive
     kdepim-addons
 )
@@ -146,6 +144,7 @@ GNOME_PACKAGES=(
     gdm
     geary
     gnome-backgrounds
+    gnome-calculator
     gnome-calendar
     gnome-characters
     gnome-color-manager
@@ -184,7 +183,6 @@ GNOME_PACKAGES=(
 GNOME_FLATPAKS=(
     io.github.celluloid_player.Celluloid
     org.bluesabre.MenuLibre
-    org.gnome.Calculator
     org.gnome.SimpleScan
     org.gnome.font-viewer
     org.gnome.TextEditor
@@ -201,6 +199,7 @@ GNOME_CONFIGS=(
     ~/.config/dconf
     ~/.config/evince
     ~/.config/evolution
+    -/.config/geary
     ~/.config/gnome-control-center
     ~/.config/gnome-session
     ~/.config/goa-1.0
@@ -240,7 +239,6 @@ GNOME_CONFIGS=(
     ~/.local/share/nautilus-python
     ~/.local/share/nemo-python
     ~/.local/share/org.gnome.TextEditor
-
 )
 
 read -p $'ESCOLHA O DESKTOP A SER INSTALADO\n1) Gnome\n2) Plasma\nInstalar: ' DESKTOP
