@@ -71,8 +71,6 @@ PLASMA_PACKAGES=(
     partitionmanager
     ffmpegthumbs
     ffmpegthumbnailer
-    kio-gdrive
-    kdepim-addons
 )
 
 PLASMA_CONFIGS=(
