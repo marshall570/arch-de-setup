@@ -50,7 +50,6 @@ PLASMA_PACKAGES=(
     systemsettings
     system-config-printer
     xdg-desktop-portal-kde
-    xdg-desktop-portal-gtk
     plasma-wayland-protocols
     dolphin
     ark
@@ -61,7 +60,6 @@ PLASMA_PACKAGES=(
     haruna
     okular
     spectacle
-    konsole
     packagekit-qt5
     packagekit-qt6
     print-manager
@@ -146,7 +144,6 @@ GNOME_PACKAGES=(
     gnome-calendar
     gnome-characters
     gnome-color-manager
-    gnome-console
     gnome-control-center
     gnome-disk-utility
     gnome-keyring
@@ -186,7 +183,6 @@ GNOME_FLATPAKS=(
     org.gnome.TextEditor
     org.gnome.Loupe
     org.gnome.Extensions
-    org.gnome.NetworkDisplays
     org.gnome.FileRoller
 )
 
@@ -214,16 +210,6 @@ GNOME_CONFIGS=(
     ~/.config/simple-scan
     ~/.config/.gsd-keyboard.settings-ported
     ~/.gnome
-    ~/.local/share/applications/avahi-discover.desktop
-    ~/.local/share/applications/bssh.desktop
-    ~/.local/share/applications/bvnc.desktop
-    ~/.local/share/applications/org.freedesktop.MalcontentControl.desktop
-    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.desktop
-    ~/.local/share/applications/org.gnome.Shell.Extensions.GSConnect.Preferences.desktop
-    ~/.local/share/applications/qv4l2.desktop
-    ~/.local/share/applications/qvidcap.desktop
-    ~/.local/share/applications/vim.desktop
-    ~/.local/share/applications/defaults.list
     ~/.local/share/backgrounds
     ~/.local/share/baloo
     ~/.local/share/desktop-directories
