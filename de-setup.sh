@@ -59,6 +59,7 @@ PLASMA_PACKAGES=(
     gwenview
     haruna
     okular
+    konsole
     spectacle
     packagekit-qt5
     packagekit-qt6
@@ -143,6 +144,7 @@ GNOME_PACKAGES=(
     gnome-calculator
     gnome-calendar
     gnome-characters
+    gnome-console
     gnome-color-manager
     gnome-control-center
     gnome-disk-utility
