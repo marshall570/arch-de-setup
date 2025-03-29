@@ -172,14 +172,14 @@ GNOME_PACKAGES=(
     tecla
     xdg-desktop-portal-gnome
     xdg-user-dirs-gtk
-    gnome-tweaks
     gnome-themes-extra
     gnome-browser-connector
 )
 
 GNOME_FLATPAKS=(
     io.github.celluloid_player.Celluloid
-    org.bluesabre.MenuLibre
+    page.codeberg.libre_menu_editor.LibreMenuEditor
+    page.tesk.Refine
     org.gnome.SimpleScan
     org.gnome.font-viewer
     org.gnome.TextEditor
