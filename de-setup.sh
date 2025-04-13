@@ -154,6 +154,7 @@ GNOME_PACKAGES=(
     gnome-settings-daemon
     gnome-shell
     gnome-system-monitor
+    gnome-tweaks
     gnome-user-share
     grilo-plugins
     gvfs
@@ -178,8 +179,7 @@ GNOME_PACKAGES=(
 
 GNOME_FLATPAKS=(
     io.github.celluloid_player.Celluloid
-    page.codeberg.libre_menu_editor.LibreMenuEditor
-    page.tesk.Refine
+    org.bluesabre.MenuLibre
     org.gnome.SimpleScan
     org.gnome.font-viewer
     org.gnome.TextEditor
