@@ -137,7 +137,6 @@ PLASMA_CONFIGS=(
 
 GNOME_PACKAGES=(
     adw-gtk-theme
-    evince
     gdm
     geary
     gnome-backgrounds
@@ -169,7 +168,6 @@ GNOME_PACKAGES=(
     nautilus
     orca
     rygel
-    sushi
     tecla
     xdg-desktop-portal-gnome
     xdg-user-dirs-gtk
