@@ -70,6 +70,7 @@ PLASMA_PACKAGES=(
     partitionmanager
     ffmpegthumbs
     ffmpegthumbnailer
+    kimageformats
 )
 
 PLASMA_CONFIGS=(
@@ -184,6 +185,7 @@ GNOME_FLATPAKS=(
     org.gnome.Loupe
     org.gnome.Extensions
     org.gnome.FileRoller
+    org.gnome.Papers
 )
 
 GNOME_CONFIGS=(
